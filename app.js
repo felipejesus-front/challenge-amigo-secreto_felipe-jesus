@@ -32,12 +32,20 @@ function sortearAmigo() {
 			Math.random() * arrayNomes.length
 		);
 
-		//usar o numero aleatório para escolher um nome da lista
 		console.log(arrayNomes[gerarNumeroBaseadoNoArray]);
 
-		//mostrar resultado na tela
 		resultado.innerHTML = `<p>O amigo secreto sorteado é: <b>${arrayNomes[gerarNumeroBaseadoNoArray]}</b></p>`;
+
+		document.getElementById("btnReset").style.display = "flex";
 	} else {
 		alert("A lista está vazia, Coloque pelomenos um nome na lista.");
 	}
+}
+
+function resetarJogo() {
+	arrayNomes.length = 0;
+	listaAmigos.innerHTML = "";
+	resultado.innerHTML = "";
+	nomeDoAmigo.value = "";
+	document.getElementById("btnReset").style.display = "none";
 }
